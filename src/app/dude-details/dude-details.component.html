@@ -1,0 +1,14 @@
+<div>
+  <label>name: </label>
+  <input [(ngModel)]="dude.name" placeholder="name">  
+</div>
+
+<p>
+current dude:
+<md-list>
+  <md-list-item>name:  {{dude.name}}</md-list-item>
+  <md-list-item>cool:  {{dude.cool}}</md-list-item>
+  <md-list-item>coolness: {{dude.coolness}}
+<input type="range" min = "1" max ="15" [(ngModel)]="dude.coolness" (change) = "dude.coolnessReached()"></md-list-item>
+</md-list>
+</p>
