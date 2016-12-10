@@ -1,8 +1,13 @@
 export class Dude {
     cool: boolean;
 
-    constructor(public name: string, public coolness: number) {
+    imagePath: string = '../assets/images/default_avatar.png';
+
+    constructor(public name: string, public coolness: number, imagePath?: string) {
         this.coolnessReached();
+        if (typeof imagePath !== 'undefined') {
+            this.imagePath = '../assets/images/' + imagePath;
+        }
     }
 
     coolnessReached() {

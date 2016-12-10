@@ -7,12 +7,16 @@
 <md-card>
 <md-list>
 <md-list-item *ngFor="let item of dudes" (click) = "currentDude = item">
+  
+  <img md-list-avatar [src]="item.imagePath">
+  
   <div *ngIf="item.cool">
     {{item.name}} ist ganz in Ordnung.
   </div>
   <div *ngIf="!item.cool">
     {{item.name}} ist so lala.
   </div>
+  
 </md-list-item>
 </md-list>
 </md-card>
