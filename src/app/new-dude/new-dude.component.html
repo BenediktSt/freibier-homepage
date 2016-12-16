@@ -6,14 +6,14 @@
 	<md-card-content>
 		<form>
 			<p>Daten:</p>
-			<md-input placeholder="Name" style="width: 70%" [(ngModel)]="newDude.name" name="name"></md-input>
-			<md-input placeholder="Pfad zu einem persönlichen Bild" style="width: 70%"></md-input>
+			<md-input placeholder="Name" style="width: 70%" [(ngModel)]="name" name="name"></md-input>
+			<md-input placeholder="Pfad zu einem persönlichen Bild" style="width: 70%" [(ngModel)]="imagePath" name="img"></md-input>
 			<p>Coolness:</p>
-			<md-slider thumb-label min="1" max="15" placeholder="Coolness" style="width: 70%" [(ngModel)]="newDude.coolness" name="cooless"></md-slider>
+			<md-slider thumb-label min="1" max="15" placeholder="Coolness" style="width: 70%" [(ngModel)]="coolness" name="cooless"></md-slider>
 		</form>
 	</md-card-content>
 	<md-card-actions>
-    <button md-button (click)="createNewDude()">
+    <button md-button (click)="clearDude()">
     	<md-icon>thumb_down</md-icon>
     	Cancel
     </button>

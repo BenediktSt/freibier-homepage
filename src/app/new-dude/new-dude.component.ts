@@ -11,20 +11,26 @@ export class NewDudeComponent implements OnInit {
   @Input()
   dudes: Dude[];
 
-  newDude: Dude;
+  name: string = '';
+  imagePath: string = '';
+  coolness: number = 5;
 
   componentTitle: string = 'So macht man einen neuen Dude';
-  constructor() {
-    this.newDude = new Dude('', 0);
-  }
+  constructor() {}
 
   createNewDude(){
-    this.dudes.push(this.newDude);
+    let newDude: Dude = new Dude(this.name, this.coolness);
+    if (this.imagePath !== '') {
+      newDude.addImage(this.imagePath);
+    }
+    this.dudes.push(newDude);
     this.clearDude();
   }
 
   clearDude(){
-    this.newDude = new Dude('', 0);
+    this.name = '';
+    this.imagePath = '';
+    this.coolness = 5;
   }
 
   ngOnInit() {
