@@ -11,6 +11,9 @@ export class NewDudeComponent implements OnInit {
   @Input()
   dudes: Dude[];
 
+  @Input()
+  create: boolean;
+
   name: string = '';
   imagePath: string = '';
   coolness: number = 5;
@@ -31,6 +34,7 @@ export class NewDudeComponent implements OnInit {
     this.name = '';
     this.imagePath = '';
     this.coolness = 5;
+    this.create = false;
   }
 
   ngOnInit() {
