@@ -6,18 +6,18 @@
 	<md-card-content>
 		<form>
 			<p>Daten:</p>
-			<md-input placeholder="Name" style="width: 70%"></md-input>
+			<md-input placeholder="Name" style="width: 70%" [(ngModel)]="newDude.name" name="name"></md-input>
 			<md-input placeholder="Pfad zu einem persönlichen Bild" style="width: 70%"></md-input>
 			<p>Coolness:</p>
-			<md-slider value="2" placeholder="Coolness" style="width: 70%"></md-slider>
+			<md-slider thumb-label min="1" max="15" placeholder="Coolness" style="width: 70%" [(ngModel)]="newDude.coolness" name="cooless"></md-slider>
 		</form>
 	</md-card-content>
 	<md-card-actions>
-    <button md-button>
+    <button md-button (click)="createNewDude()">
     	<md-icon>thumb_down</md-icon>
     	Cancel
     </button>
-    <button md-button>
+	<button md-button (click)="createNewDude()">
     	<md-icon>thumb_up</md-icon>
     	Create
     </button>

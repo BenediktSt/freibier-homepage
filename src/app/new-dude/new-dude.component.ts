@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import {Dude} from '../dude-details/dude-details';
 
 @Component({
   selector: 'app-new-dude',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewDudeComponent implements OnInit {
 
-	componentTitle: String = "So macht man einen neuen Dude";
-  
-  constructor() { }
+  @Input()
+  dudes: Dude[];
+
+  newDude: Dude;
+
+  componentTitle: string = 'So macht man einen neuen Dude';
+  constructor() {
+    this.newDude = new Dude('', 0);
+  }
+
+  createNewDude(){
+    this.dudes.push(this.newDude);
+    this.clearDude();
+  }
+
+  clearDude(){
+    this.newDude = new Dude('', 0);
+  }
 
   ngOnInit() {
   }
