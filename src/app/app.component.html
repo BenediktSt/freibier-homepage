@@ -27,4 +27,4 @@
 </md-card>
   
 <app-dude-details [dude] = "currentDude"></app-dude-details>
-<app-new-dude [create]="create" [dudes]= "dudes" *ngIf="create">das kann etwas dauern</app-new-dude>
+<app-new-dude *ngIf="create" [dudes]= "dudes" (finished)="hideNewDudeComponent($event)">das kann etwas dauern</app-new-dude>

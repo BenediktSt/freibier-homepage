@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 import {Dude} from '../dude-details/dude-details';
 
 @Component({
@@ -8,11 +8,9 @@ import {Dude} from '../dude-details/dude-details';
 })
 export class NewDudeComponent implements OnInit {
 
-  @Input()
-  dudes: Dude[];
+  @Input() dudes: Dude[];
 
-  @Input()
-  create: boolean;
+  @Output() finished = new EventEmitter<String>();
 
   name: string = '';
   imagePath: string = '';
@@ -34,7 +32,7 @@ export class NewDudeComponent implements OnInit {
     this.name = '';
     this.imagePath = '';
     this.coolness = 5;
-    this.create = false;
+    this.finished.emit('Neuer Dude erzeugt');
   }
 
   ngOnInit() {
