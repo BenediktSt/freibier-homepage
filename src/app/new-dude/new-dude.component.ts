@@ -19,6 +19,8 @@ export class NewDudeComponent implements OnInit {
   componentTitle: string = 'So macht man einen neuen Dude';
   constructor() {}
 
+  // ganzs schön krasser scheiss hier
+
   createNewDude(){
     let newDude: Dude = new Dude(this.name, this.coolness);
     if (this.imagePath !== '') {
