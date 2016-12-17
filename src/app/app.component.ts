@@ -14,4 +14,10 @@ export class AppComponent {
                    new Dude('Stefan', 2.4)];
 
   currentDude: Dude = this.dudes[0];
+  create: boolean = false;
+
+  hideNewDudeComponent(msg){
+    console.log('Message: ' + msg);
+    this.create = false;
+  }
 }

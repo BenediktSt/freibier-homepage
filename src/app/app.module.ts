@@ -6,11 +6,13 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { DudeDetailsComponent } from './dude-details/dude-details.component';
+import { NewDudeComponent } from './new-dude/new-dude.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DudeDetailsComponent
+    DudeDetailsComponent,
+    NewDudeComponent
   ],
   imports: [
     BrowserModule,
