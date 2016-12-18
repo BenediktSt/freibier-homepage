@@ -1,4 +1,5 @@
 import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
+
 import {Dude} from '../dude-details/dude-details';
 
 @Component({
@@ -17,9 +18,6 @@ export class NewDudeComponent implements OnInit {
   coolness: number = 5;
 
   componentTitle: string = 'So macht man einen neuen Dude';
-  constructor() {}
-
-  // ganzs schön krasser scheiss hier
 
   createNewDude(){
     let newDude: Dude = new Dude(this.name, this.coolness);
@@ -27,14 +25,18 @@ export class NewDudeComponent implements OnInit {
       newDude.addImage(this.imagePath);
     }
     this.dudes.push(newDude);
-    this.clearDude();
+    this.clearDude(`Neuer Dude '${newDude.name}' erstellt!`);
   }
 
-  clearDude(){
+  clearDude(message?: string){
+    if (typeof message == 'undefined') {
+      message = "Dude-Erstellung abgebrochen!";
+    }
+
     this.name = '';
     this.imagePath = '';
     this.coolness = 5;
-    this.finished.emit('Neuer Dude erzeugt');
+    this.finished.emit(message);
   }
 
   ngOnInit() {
