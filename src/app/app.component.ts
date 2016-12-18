@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+
 import { Dude } from './dude-details/dude-details';
 
 @Component({
   selector: 'app-root',
+  providers: [MdSnackBar],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -15,9 +18,16 @@ export class AppComponent {
 
   currentDude: Dude = this.dudes[0];
   create: boolean = false;
+  snackbarConfig : MdSnackBarConfig;
+
+  constructor(private snackBar: MdSnackBar) {
+    this.snackbarConfig = new MdSnackBarConfig();
+    this.snackbarConfig.duration = 2000;
+  }
+
 
   hideNewDudeComponent(msg){
-    console.log('Message: ' + msg);
+    this.snackBar.open(msg, 'CLOSE', this.snackbarConfig);
     this.create = false;
   }
 }
