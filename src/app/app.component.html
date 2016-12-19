@@ -1,30 +1,33 @@
 <md-toolbar color = "primary">Peni</md-toolbar>
+<div class="container-fluid">
+  <h1>
+    {{title}}
+  </h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6"> 
+      <md-card>
+      <md-list>
+      <md-list-item *ngFor="let item of dudes" (click) = "currentDude = item">
+        
+        <img md-list-avatar [src]="item.imagePath">
+        
+        <div *ngIf="item.cool">
+          {{item.name}} ist ganz in Ordnung.
+        </div>
+        <div *ngIf="!item.cool">
+          {{item.name}} ist so lala.
+        </div>
 
-<h1>
-  {{title}}
-</h1>
-
-<md-card>
-<md-list>
-<md-list-item *ngFor="let item of dudes" (click) = "currentDude = item">
-  
-  <img md-list-avatar [src]="item.imagePath">
-  
-  <div *ngIf="item.cool">
-    {{item.name}} ist ganz in Ordnung.
+      </md-list-item>
+      <md-list-item *ngIf="!create"> 
+        <button md-mini-fab color="primary" align="start" (click)="create=true">
+          <md-icon class="md-24">add</md-icon>
+        </button>
+      </md-list-item>
+      </md-list>
+      </md-card>
+    </div>
+      <app-new-dude *ngIf="create" [dudes]= "dudes" (finished)="hideNewDudeComponent($event)">das kann etwas dauern</app-new-dude>
   </div>
-  <div *ngIf="!item.cool">
-    {{item.name}} ist so lala.
-  </div>
-
-</md-list-item>
-<md-list-item *ngIf="!create"> 
-  <button md-mini-fab color="primary" align="start" (click)="create=true">
-    <md-icon class="md-24">add</md-icon>
-  </button>
-</md-list-item>
-</md-list>
-</md-card>
-  
-<app-dude-details [dude] = "currentDude"></app-dude-details>
-<app-new-dude *ngIf="create" [dudes]= "dudes" (finished)="hideNewDudeComponent($event)">das kann etwas dauern</app-new-dude>
+  <app-dude-details [dude] = "currentDude"></app-dude-details>
+</div>

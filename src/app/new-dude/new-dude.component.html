@@ -1,25 +1,29 @@
-<md-card style="width: 50%">
-	<md-card-title>{{componentTitle}}</md-card-title>
-	<md-card-subtitle>
-		Um einen neuen Dude zu machen, werden folgende Eingaben benötigt:
-	</md-card-subtitle>
-	<md-card-content>
-		<form>
-			<p>Daten:</p>
-			<md-input placeholder="Name" style="width: 70%" [(ngModel)]="name" name="name"></md-input>
-			<md-input placeholder="Pfad zu einem persönlichen Bild" style="width: 70%" [(ngModel)]="imagePath" name="img"></md-input>
-			<p>Coolness:</p>
-			<md-slider thumb-label min="1" max="15" placeholder="Coolness" style="width: 70%" [(ngModel)]="coolness" name="cooless"></md-slider>
-		</form>
-	</md-card-content>
-	<md-card-actions>
-    <button md-button (click)="clearDude()">
-    	<md-icon>thumb_down</md-icon>
-    	Cancel
-    </button>
-	<button md-button (click)="createNewDude()">
-    	<md-icon>thumb_up</md-icon>
-    	Create
-    </button>
-   </md-card-actions>
-</md-card>
+<!--<md-card style="width: 50%">-->
+
+<div class="col-xs-12 col-sm-6 col-md-6">	
+	<md-card>
+		<md-card-title>{{componentTitle}}</md-card-title>
+		<md-card-subtitle>
+			Um einen neuen Dude zu machen, werden folgende Eingaben benötigt:
+		</md-card-subtitle>
+		<md-card-content>
+			<form>
+				<p>Daten:</p>
+				<md-input placeholder="Name" style="width: 70%" [(ngModel)]="name" name="name"></md-input>
+				<md-input placeholder="Pfad zu einem persönlichen Bild" style="width: 70%" [(ngModel)]="imagePath" name="img"></md-input>
+				<p>Coolness:</p>
+				<md-slider thumb-label min="1" max="15" placeholder="Coolness" style="width: 70%" [(ngModel)]="coolness" name="cooless"></md-slider>
+			</form>
+		</md-card-content>
+		<md-card-actions>
+	    <button md-button (click)="clearDude()">
+	    	<md-icon>thumb_down</md-icon>
+	    	Cancel
+	    </button>
+		<button md-button (click)="createNewDude()">
+	    	<md-icon>thumb_up</md-icon>
+	    	Create
+	    </button>
+	   </md-card-actions>
+	</md-card>
+</div>
