@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
 
+import { HttpModule } from '@angular/http';
+
 import { MaterialModule } from './material.module';
 import { appRouts } from './routes';
 
@@ -63,8 +65,12 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     RouterModule.forRoot(appRouts),
     BrowserModule,
     MaterialModule,
+<<<<<<< HEAD
     HttpModule,
     FormsModule
+=======
+    HttpModule
+>>>>>>> Elvish mystic component
   ],
   providers: [],
   bootstrap: [AppComponent]
