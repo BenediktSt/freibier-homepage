@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Elvish mystic component
 <md-toolbar color="primary">
   <span>Wie gut, dass wir was für die Website machen</span>
   <span class="spacer"></span>
@@ -18,6 +21,7 @@
   <router-outlet></router-outlet>
 </md-sidenav-container>
 =======
+<<<<<<< HEAD
 <card-search (change)="updateName($event)"></card-search>
 =======
 <card-search (nameSubmitted)="updateName($event)"></card-search>
@@ -36,3 +40,23 @@
 >>>>>>> Updated to newest angular version for angular materials
 =======
 >>>>>>> refactored and added card rating
+=======
+<div class="card">
+    <ng-container *ngFor="let card of data.cards">
+      <div class="card">
+        <h3>{{card.name}}</h3>
+        <div>
+        {{card.power}}/{{card.toughness}}
+        {{card.text}}
+        </div>
+        <ng-container *ngIf = card.imageUrl>
+          <div><img src="{{card.imageUrl}}"/></div>
+        </ng-container>
+        <ng-container *ngIf = !card.imageUrl>
+          <div>No image!</div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+>>>>>>> Elvish mystic component
+>>>>>>> Elvish mystic component
