@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <md-toolbar color="primary">
   <span>Wie gut, dass wir was für die Website machen</span>
   <span class="spacer"></span>
@@ -14,3 +15,9 @@
   </md-sidenav>
   <router-outlet></router-outlet>
 </md-sidenav-container>
+=======
+<card-search (change)="updateName($event)"></card-search>
+<ng-container *ngIf = cardName>
+  <show-printings [cardName]="cardName"></show-printings>
+</ng-container>
+>>>>>>> Search bar advanced
