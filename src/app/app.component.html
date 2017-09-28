@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Elvish mystic component
-=======
->>>>>>> Working on search field for card names.
 <md-toolbar color="primary">
   <span>Wie gut, dass wir was für die Website machen</span>
   <span class="spacer"></span>
@@ -23,49 +14,3 @@
   </md-sidenav>
   <router-outlet></router-outlet>
 </md-sidenav-container>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<card-search (change)="updateName($event)"></card-search>
-=======
-<card-search (nameSubmitted)="updateName($event)"></card-search>
->>>>>>> Search bar finished
-=======
-<app-card-search (nameSubmitted)="updateName($event)"></app-card-search>
->>>>>>> Added folder structure and fixed styling errors
-<ng-container *ngIf = cardName>
-  <app-card-details [cardName]="cardName"></app-card-details>
-</ng-container>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Search bar advanced
-=======
-<app-card-rating></app-card-rating>
->>>>>>> Updated to newest angular version for angular materials
-=======
->>>>>>> refactored and added card rating
-=======
-=======
-=======
-<card-search></card-search>
->>>>>>> Working on search field for card names.
->>>>>>> Working on search field for card names.
-<div class="card">
-    <ng-container *ngFor="let card of data.cards">
-      <div class="card">
-        <h3>{{card.name}}</h3>
-        <div>
-        {{card.power}}/{{card.toughness}}
-        {{card.text}}
-        </div>
-        <ng-container *ngIf = card.imageUrl>
-          <div><img src="{{card.imageUrl}}"/></div>
-        </ng-container>
-        <ng-container *ngIf = !card.imageUrl>
-          <div>No image!</div>
-        </ng-container>
-      </div>
-    </ng-container>
-  </div>
->>>>>>> Elvish mystic component
->>>>>>> Elvish mystic component
