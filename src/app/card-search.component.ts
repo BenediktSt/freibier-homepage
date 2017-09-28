@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'card-search',
@@ -9,13 +9,12 @@ export class CardSearchComponent {
   cardName : string;
   submitted : boolean = false;
 
-  onSubmit() { this.submitted = true; }
+  @Output()
+  nameSubmitted : EventEmitter<string> = new EventEmitter<string>();
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.cardName); }
-
-  newName() {
-    this.cardName = "Stefan";
+  onSubmit() {
+    this.submitted = true;
+    this.nameSubmitted.emit(this.cardName);
   }
 
 }
