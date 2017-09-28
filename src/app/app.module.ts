@@ -2,8 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 
 import { HttpModule } from '@angular/http';
+=======
+>>>>>>> Working on search field for card names.
 
 import { HttpModule } from '@angular/http';
 
@@ -15,11 +18,13 @@ import { AppComponent } from './app.component';
 <<<<<<< HEAD
 import { DudeAdminComponent } from './dude-admin/dude-admin.component';
 import { HomeComponent } from './home/home.component';
+import { CardSearchComponent } from './card-search.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       DudeAdminComponent,
+<<<<<<< HEAD
       HomeComponent
 =======
 import { CardSearchComponent } from './card-search.component';
@@ -60,17 +65,26 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     CardRatingComponent,
     CardDetailsComponent
 >>>>>>> refactored and added card rating
+=======
+      HomeComponent,
+      CardSearchComponent
+>>>>>>> Working on search field for card names.
   ],
   imports: [
     RouterModule.forRoot(appRouts),
     BrowserModule,
     MaterialModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
     HttpModule,
     FormsModule
 =======
     HttpModule
 >>>>>>> Elvish mystic component
+=======
+    HttpModule,
+    FormsModule
+>>>>>>> Working on search field for card names.
   ],
   providers: [],
   bootstrap: [AppComponent]
