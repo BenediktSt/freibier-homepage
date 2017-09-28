@@ -20,12 +20,18 @@ import { HomeComponent } from './home/home.component';
       HomeComponent
 =======
 import { CardSearchComponent } from './card-search.component';
+import { ShowPrintingsComponent } from './show-printings.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     CardSearchComponent
 >>>>>>> Working on search field for card names.
+=======
+    CardSearchComponent,
+    ShowPrintingsComponent
+>>>>>>> Search bar advanced
   ],
   imports: [
     RouterModule.forRoot(appRouts),
