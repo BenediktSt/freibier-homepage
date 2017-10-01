@@ -5,32 +5,32 @@ import 'rxjs/add/operator/map';
 
 
 @Component({
-  selector: 'show-printings',
+  selector: 'app-show-printings',
   templateUrl: './show-printings.component.html',
   styleUrls: ['./app.component.css']
 })
 export class ShowPrintingsComponent implements OnChanges {
   title = 'Api Response';
   private apiUrl = 'https://api.magicthegathering.io/v1/cards';
-  data : any = {};
+  data: any = {};
 
-  @Input() cardName : string;
+  @Input() cardName: string;
 
-  constructor(private http : Http) { }
+  constructor(private http: Http) { }
 
   getData() {
     return this.http.get(this.apiUrl, {
       params : { name : this.cardName }
-    }).map((res : Response) => res.json())
+    }).map((res: Response) => res.json());
   }
 
   getContacts() {
     this.getData().subscribe(data => {
       console.log(data);
-      this.data = data;} )
+      this.data = data; } );
   }
 
-  ngOnChanges(changes : SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
     this.getContacts();
     this.getData();
   }
