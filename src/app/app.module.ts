@@ -11,6 +11,8 @@ import { appRouts } from './routes';
 import { AppComponent } from './app.component';
 import { DudeAdminComponent } from './dude-admin/dude-admin.component';
 import { HomeComponent } from './home/home.component';
+import { CardSearchComponent } from './card-search/card-search.component';
+import { ShowPrintingsComponent } from './show-printings/show-printings.component';
 
 @NgModule({
   declarations: [
