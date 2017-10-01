@@ -1,16 +1,16 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'card-search',
+  selector: 'app-card-search',
   templateUrl: 'card-search.component.html'
 })
 export class CardSearchComponent {
 
-  cardName : string;
-  submitted : boolean = false;
+  cardName: string;
+  submitted = false;
 
   @Output()
-  nameSubmitted : EventEmitter<string> = new EventEmitter<string>();
+  nameSubmitted: EventEmitter<string> = new EventEmitter<string>();
 
   onSubmit() {
     this.submitted = true;
