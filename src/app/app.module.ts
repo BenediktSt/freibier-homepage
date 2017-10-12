@@ -25,7 +25,11 @@ import { ShowPrintingsComponent } from './show-printings.component'
 =======
 import { CardSearchComponent } from './card-search/card-search.component';
 import { ShowPrintingsComponent } from './show-printings/show-printings.component';
+<<<<<<< HEAD
 >>>>>>> Added folder structure and fixed styling errors
+=======
+import { CardRatingComponent } from './card-rating/card-rating.component';
+>>>>>>> Updated to newest angular version for angular materials
 
 @NgModule({
   declarations: [
@@ -35,8 +39,13 @@ import { ShowPrintingsComponent } from './show-printings/show-printings.componen
 >>>>>>> Working on search field for card names.
 =======
     CardSearchComponent,
+<<<<<<< HEAD
     ShowPrintingsComponent
 >>>>>>> Search bar advanced
+=======
+    ShowPrintingsComponent,
+    CardRatingComponent
+>>>>>>> Updated to newest angular version for angular materials
   ],
   imports: [
     RouterModule.forRoot(appRouts),
