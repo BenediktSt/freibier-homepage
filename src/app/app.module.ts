@@ -6,10 +6,12 @@ import { MaterialModule } from './material.module';
 import { appRouts } from './routes';
 
 import { AppComponent } from './app.component';
+import { DudeAdminComponent } from './dude-admin/dude-admin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+      AppComponent,
+      DudeAdminComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
