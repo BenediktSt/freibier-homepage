@@ -21,7 +21,7 @@ export class ShowPrintingsComponent implements OnChanges {
 
   getData() {
     return this.magicApiService.getCards({
-      params : { name : this.cardName }
+      params : { name : `"${this.cardName}"` }
     });
   }
 

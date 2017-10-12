@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> implemented magic api service
+=======
+
+>>>>>>> Updated to newest angular version for angular materials
 import 'rxjs/add/operator/map';
 
 @Injectable()
