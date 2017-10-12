@@ -3,25 +3,26 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+import { MagicApiService } from '../magic-api/magic-api.service';
 
 @Component({
   selector: 'app-show-printings',
   templateUrl: './show-printings.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../app.component.css'],
+  providers: [MagicApiService]
 })
 export class ShowPrintingsComponent implements OnChanges {
-  title = 'Api Response';
-  private apiUrl = 'https://api.magicthegathering.io/v1/cards';
+
   data: any = {};
 
   @Input() cardName: string;
 
-  constructor(private http: Http) { }
+  constructor(private magicApiService: MagicApiService) { }
 
   getData() {
-    return this.http.get(this.apiUrl, {
+    return this.magicApiService.getCards({
       params : { name : this.cardName }
-    }).map((res: Response) => res.json());
+    });
   }
 
   getContacts() {
@@ -32,7 +33,6 @@ export class ShowPrintingsComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.getContacts();
-    this.getData();
   }
 
 
