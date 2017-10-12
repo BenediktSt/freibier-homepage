@@ -13,12 +13,20 @@ import { DudeAdminComponent } from './dude-admin/dude-admin.component';
 import { HomeComponent } from './home/home.component';
 import { CardSearchComponent } from './card-search/card-search.component';
 import { ShowPrintingsComponent } from './show-printings/show-printings.component';
+import { CardRatingComponent } from './card-rating/card-rating.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       DudeAdminComponent,
+<<<<<<< HEAD
       HomeComponent
+=======
+      HomeComponent,
+      CardSearchComponent,
+      ShowPrintingsComponent,
+      CardRatingComponent
+>>>>>>> Updated to newest angular version for angular materials
   ],
   imports: [
     RouterModule.forRoot(appRouts),
