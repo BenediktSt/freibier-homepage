@@ -6,10 +6,14 @@ import { MaterialModule } from './material.module';
 import { appRouts } from './routes';
 
 import { AppComponent } from './app.component';
+import { DudeAdminComponent } from './dude-admin/dude-admin.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+      AppComponent,
+      DudeAdminComponent,
+      HomeComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
