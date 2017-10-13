@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-rating',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardRatingComponent implements OnInit {
 
+  @Input() cardName: string;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  rated(rating: number) {
+    console.log(rating);
+  }
+
+
 
 }

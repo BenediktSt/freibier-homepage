@@ -24,12 +24,18 @@ import { CardSearchComponent } from './card-search.component';
 import { ShowPrintingsComponent } from './show-printings.component'
 =======
 import { CardSearchComponent } from './card-search/card-search.component';
+<<<<<<< HEAD
 import { ShowPrintingsComponent } from './show-printings/show-printings.component';
 <<<<<<< HEAD
 >>>>>>> Added folder structure and fixed styling errors
 =======
 import { CardRatingComponent } from './card-rating/card-rating.component';
 >>>>>>> Updated to newest angular version for angular materials
+=======
+import { CardPrintingsComponent } from './card-printings/card-printings.component';
+import { CardRatingComponent } from './card-rating/card-rating.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
+>>>>>>> refactored and added card rating
 
 @NgModule({
   declarations: [
@@ -40,12 +46,18 @@ import { CardRatingComponent } from './card-rating/card-rating.component';
 =======
     CardSearchComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ShowPrintingsComponent
 >>>>>>> Search bar advanced
 =======
     ShowPrintingsComponent,
     CardRatingComponent
 >>>>>>> Updated to newest angular version for angular materials
+=======
+    CardPrintingsComponent,
+    CardRatingComponent,
+    CardDetailsComponent
+>>>>>>> refactored and added card rating
   ],
   imports: [
     RouterModule.forRoot(appRouts),
