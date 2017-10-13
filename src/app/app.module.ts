@@ -12,21 +12,19 @@ import { AppComponent } from './app.component';
 import { DudeAdminComponent } from './dude-admin/dude-admin.component';
 import { HomeComponent } from './home/home.component';
 import { CardSearchComponent } from './card-search/card-search.component';
-import { ShowPrintingsComponent } from './show-printings/show-printings.component';
+import { CardPrintingsComponent } from './card-printings/card-printings.component';
 import { CardRatingComponent } from './card-rating/card-rating.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       DudeAdminComponent,
-<<<<<<< HEAD
-      HomeComponent
-=======
       HomeComponent,
       CardSearchComponent,
-      ShowPrintingsComponent,
-      CardRatingComponent
->>>>>>> Updated to newest angular version for angular materials
+      CardRatingComponent,
+      CardPrintingsComponent,
+      CardDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
