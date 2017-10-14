@@ -1,4 +1,4 @@
 <div *ngIf = "cardsJSON.cards"><ng-container *ngIf = "cardsJSON.cards.length > 0">
   <app-card-printings [cardsJSON]="cardsJSON"></app-card-printings>
-  <app-card-rating></app-card-rating>
+  <app-card-rating [cardName]="cardName"></app-card-rating>
 </ng-container></div>
