@@ -13,7 +13,7 @@ export class DatabaseService {
     constructor() {
         this.driver = neo4j.driver(this.databaseUrl, neo4j.auth.basic('neo4j_reader', 'reader'));
         this.session = this.driver.session();
-    };
+    }
 
     getAllDudes() {
         return this.session.run('MATCH (n:Dude) RETURN n LIMIT 25');
