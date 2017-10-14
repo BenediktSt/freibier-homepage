@@ -14,20 +14,3 @@
   </md-sidenav>
   <router-outlet></router-outlet>
 </md-sidenav-container>
-<div class="card">
-    <ng-container *ngFor="let card of data.cards">
-      <div class="card">
-        <h3>{{card.name}}</h3>
-        <div>
-        {{card.power}}/{{card.toughness}}
-        {{card.text}}
-        </div>
-        <ng-container *ngIf = card.imageUrl>
-          <div><img src="{{card.imageUrl}}"/></div>
-        </ng-container>
-        <ng-container *ngIf = !card.imageUrl>
-          <div>No image!</div>
-        </ng-container>
-      </div>
-    </ng-container>
-  </div>
