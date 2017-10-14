@@ -1,0 +1,4 @@
+<app-card-search (nameSubmitted)="updateName($event)"></app-card-search>
+<ng-container *ngIf = cardName>
+  <app-card-details [cardName]="cardName"></app-card-details>
+</ng-container>
