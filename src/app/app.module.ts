@@ -25,6 +25,7 @@ import {StefanComponent} from './stefan/stefan.component';
       CardSearchComponent,
       CardRatingComponent,
       CardDetailsComponent,
+      CardPrintingsComponent,
       StefanComponent
   ],
   imports: [
