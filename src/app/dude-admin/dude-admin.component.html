@@ -1,6 +1,24 @@
 <p>
   Hier geht bald der mega krasse shit
 </p>
-<p>
-  {{dudes | json}}
-</p>
+<md-card>
+<md-form-field>
+  <input mdInput #inputName placeholder="Name eines Dudes">
+</md-form-field> <br>
+
+<button md-button (click)="getADude(inputName.value)">Suche</button>
+<button md-button (click)="saveThisDude(inputName.value);inputName.value=''">Hinzufügen</button>
+<button md-button (click)="getAlldudes()">Alle Dudes suchen</button>
+</md-card>
+<h2> Das sind die Dudes:</h2>
+<ng-container *ngIf="dudes">
+  <ng-container>
+    <md-card *ngFor="let dude of dudes">
+      <md-card-header>
+        <img md-card-avatar [src]="dude.image">
+        <md-card-title>{{dude.name}}</md-card-title>
+        <md-card-subtitle>{{dude.title}}</md-card-subtitle>
+      </md-card-header>
+    </md-card>
+  </ng-container>
+</ng-container>
