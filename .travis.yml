@@ -10,7 +10,7 @@ cache:
 install:
   - npm install
 script:
-  - npm run build:prod
+  - npm run build:ghpages
 deploy:
   provider: pages
   skip_cleanup: true
