@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 import { MagicApiService } from '../magic-api/magic-api.service';
+import { MagicCard } from '../magic-card/magic-card';
 
 @Component({
   selector: 'app-card-printings',
@@ -13,6 +14,6 @@ import { MagicApiService } from '../magic-api/magic-api.service';
 })
 export class CardPrintingsComponent {
 
-  @Input() cardsJSON: any;
+  @Input() cards: MagicCard[];
 
 }

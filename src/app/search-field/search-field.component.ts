@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-card-search',
-  templateUrl: 'card-search.component.html'
+  selector: 'app-search-field',
+  templateUrl: 'search-field.component.html'
 })
-export class CardSearchComponent {
+export class SearchFieldComponent {
 
-  cardName: string;
+  input: string;
   submitted = false;
 
   @Output()
@@ -14,7 +14,7 @@ export class CardSearchComponent {
 
   onSubmit() {
     this.submitted = true;
-    this.nameSubmitted.emit(this.cardName);
+    this.nameSubmitted.emit(this.input);
   }
 
 }
