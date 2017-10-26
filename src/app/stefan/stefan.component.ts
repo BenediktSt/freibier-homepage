@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MagicCard } from '../magic-card/magic-card';
+
 @Component({
   selector: 'app-stefan',
   templateUrl: './stefan.component.html',
@@ -7,11 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StefanComponent implements OnInit {
 
-  cardName: string;
+  cards: MagicCard[];
 
-  updateName(event) {
-    this.cardName = event;
-    console.log(event);
+  updateCards(event) {
+    this.cards = event;
   }
 
   constructor() { }
