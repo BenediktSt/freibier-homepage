@@ -17,6 +17,7 @@ import { CardRatingComponent } from './card-rating/card-rating.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import {StefanComponent} from './stefan/stefan.component';
 import { LinkhubComponent } from './linkhub/linkhub.component';
+import { CardSearchComponent } from './card-search/card-search.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LinkhubComponent } from './linkhub/linkhub.component';
       CardDetailsComponent,
       CardPrintingsComponent,
       StefanComponent,
-      LinkhubComponent
+      LinkhubComponent,
+      CardSearchComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
