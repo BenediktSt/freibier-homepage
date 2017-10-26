@@ -18,6 +18,7 @@ export class SearchFieldComponent {
   onSubmit() {
     this.submitted = true;
     this.nameSubmitted.emit(this.input);
+    console.log('emitted nameSubitted');
   }
 
 }
