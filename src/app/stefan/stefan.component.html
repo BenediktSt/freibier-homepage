@@ -1,4 +1,4 @@
-<app-card-search (cardsAquired)="updateCards($event)"></app-card-search>
-<ng-container *ngIf = cards>
-  <app-card-details [cards]="cards"></app-card-details>
+<app-search-field (nameSubmitted)="updateName($event)"></app-search-field>
+<ng-container *ngIf = cardName>
+  <app-card-details [cardName]="cardName"></app-card-details>
 </ng-container>
