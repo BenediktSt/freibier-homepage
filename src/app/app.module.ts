@@ -21,7 +21,11 @@ import { LinkhubComponent } from './linkhub/linkhub.component';
 import { CardSearchComponent } from './card-search/card-search.component';
 =======
 import { StefanComponent } from './stefan/stefan.component';
+<<<<<<< HEAD
 >>>>>>> Implemented a class for magic cards so we have a clean interface for them. Also implemented a cardParser that parses the json given from the api and returns a list of MagicCards
+=======
+import { CardSearchComponent } from './card-search/card-search.component';
+>>>>>>> Decoupled card search from card details. Search now is able to discern if a given card name refers to a specific card
 
 @NgModule({
   declarations: [
@@ -32,9 +36,14 @@ import { StefanComponent } from './stefan/stefan.component';
       CardRatingComponent,
       CardDetailsComponent,
       CardPrintingsComponent,
+<<<<<<< HEAD
       StefanComponent,
       LinkhubComponent,
       CardSearchComponent
+=======
+      CardSearchComponent,
+      StefanComponent
+>>>>>>> Decoupled card search from card details. Search now is able to discern if a given card name refers to a specific card
   ],
   imports: [
     RouterModule.forRoot(appRouts),
