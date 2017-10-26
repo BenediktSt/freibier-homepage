@@ -15,9 +15,13 @@ import { SearchFieldComponent } from './search-field/search-field.component';
 import { CardPrintingsComponent } from './card-printings/card-printings.component';
 import { CardRatingComponent } from './card-rating/card-rating.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
+<<<<<<< HEAD
 import {StefanComponent} from './stefan/stefan.component';
 import { LinkhubComponent } from './linkhub/linkhub.component';
 import { CardSearchComponent } from './card-search/card-search.component';
+=======
+import { StefanComponent } from './stefan/stefan.component';
+>>>>>>> Implemented a class for magic cards so we have a clean interface for them. Also implemented a cardParser that parses the json given from the api and returns a list of MagicCards
 
 @NgModule({
   declarations: [
