@@ -12,9 +12,14 @@ install:
 script:
   - npm run build:ghpages
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  on:
-    branch: master
+  - provider: heroku
+    api_key: $HEROKU_AUTH_TOKEN
+    app: freibier-homepage
+    on:
+      branch: master
+  - provider: pages
+    skip-cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    on:
+      branch: master
