@@ -1,0 +1,57 @@
+<h2>Sammlung wichtiger Links für die Dudes</h2>
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Allgemein
+    </md-panel-title>
+    <md-panel-description>
+      Allgemein verwendete Links
+    </md-panel-description>
+  </md-expansion-panel-header>
+  <ng-container *ngFor="let link of generalLinks">
+    <a [href]="link.ref" target="_blank">
+      <button md-button>
+        <md-icon>open_in_new</md-icon>
+        {{link.name}}
+      </button>
+    </a><br>
+  </ng-container>
+</md-expansion-panel>
+
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Softwareentwicklung
+    </md-panel-title>
+    <md-panel-description>
+      Verschiedene Links welche hier bei der Entwicklung verwendet werden
+    </md-panel-description>
+  </md-expansion-panel-header>
+  <ng-container *ngFor="let link of codingLinks">
+    <a [href]="link.ref" target="_blank">
+      <button md-button>
+        <md-icon>open_in_new</md-icon>
+        {{link.name}}
+      </button>
+    </a><br>
+  </ng-container>
+</md-expansion-panel>
+
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Gaming
+    </md-panel-title>
+    <md-panel-description>
+      Links zu Gaming Stuff
+    </md-panel-description>
+  </md-expansion-panel-header>
+  <ng-container *ngFor="let link of gamingLinks">
+    <a [href]="link.ref" target="_blank">
+      <button md-button>
+        <md-icon>open_in_new</md-icon>
+        {{link.name}}
+      </button>
+    </a><br>
+  </ng-container>
+</md-expansion-panel>

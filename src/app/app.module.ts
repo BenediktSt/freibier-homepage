@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
@@ -16,6 +16,7 @@ import { CardPrintingsComponent } from './card-printings/card-printings.componen
 import { CardRatingComponent } from './card-rating/card-rating.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import {StefanComponent} from './stefan/stefan.component';
+import { LinkhubComponent } from './linkhub/linkhub.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {StefanComponent} from './stefan/stefan.component';
       CardRatingComponent,
       CardDetailsComponent,
       CardPrintingsComponent,
-      StefanComponent
+      StefanComponent,
+      LinkhubComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
