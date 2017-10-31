@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { HttpModule } from '@angular/http';
 
@@ -39,7 +40,7 @@ import { LinkhubComponent } from './linkhub/linkhub.component';
     HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
