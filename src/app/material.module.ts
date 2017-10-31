@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-    MdToolbarModule,
-    MdButtonModule,
-    MdIconModule,
-    MdSidenavModule,
-    MdFormFieldModule,
-    MdInputModule,
-    MdExpansionModule,
-    MdCardModule
+  MdToolbarModule,
+  MdButtonModule,
+  MdIconModule,
+  MdSidenavModule,
+  MdFormFieldModule,
+  MdInputModule,
+  MdExpansionModule,
+  MdCardModule,
+  MdTabsModule,
+  MdSlideToggleModule,
+  MdProgressBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -21,7 +24,10 @@ import {
     MdFormFieldModule,
     MdInputModule,
     MdCardModule,
-    MdExpansionModule
+    MdExpansionModule,
+    MdTabsModule,
+    MdSlideToggleModule,
+    MdProgressBarModule
   ],
   exports: [
     MdButtonModule,
@@ -32,7 +38,10 @@ import {
     MdFormFieldModule,
     MdInputModule,
     MdCardModule,
-    MdExpansionModule
+    MdExpansionModule,
+    MdTabsModule,
+    MdSlideToggleModule,
+    MdProgressBarModule
   ],
 })
 export class MaterialModule {

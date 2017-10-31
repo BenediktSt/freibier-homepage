@@ -1,0 +1,41 @@
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="left"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+  <md-card fxFlex="30%">
+    <md-card-header>
+      <h2>Kontingente</h2>
+    </md-card-header>
+    <md-card-subtitle>
+      <md-slide-toggle color="primary" (change)="filterContingentList($event)">Nur aktuelle Kontingente anzeigen</md-slide-toggle>
+    </md-card-subtitle>
+    <md-card-content>
+      <ng-container *ngFor="let contingent of contingents">
+        <app-contingent-overview [contingent]="contingent" (selected)="selectContingent(contingent)"></app-contingent-overview>
+        <hr>
+      </ng-container>
+    </md-card-content>
+    <div class="container" fxLayout fxLayoutAlign="center">
+      <button md-icon-button class="add-button">
+        <md-icon class="add-button-icon">add_circle</md-icon>
+      </button>
+    </div>
+  </md-card>
+
+  <md-card fxFlex="70%" fxFlexFill>
+    <md-card-header>
+      <h2>Steuerung der Kontingente</h2>
+    </md-card-header>
+    <md-card-content>
+      <ng-container *ngIf="currentContingent">
+        {{currentContingent | json}}
+      </ng-container>
+      <ng-container *ngIf="!currentContingent">
+        <p>In diesem Bereich können die zur Verfügung stehenden Kontingente verwaltet weden.</p>
+      </ng-container>
+    </md-card-content>
+  </md-card>
+</div>
