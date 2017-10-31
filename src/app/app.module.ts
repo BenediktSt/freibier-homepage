@@ -26,10 +26,14 @@ import { StefanComponent } from './stefan/stefan.component';
 =======
 import { CardSearchComponent } from './card-search/card-search.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Decoupled card search from card details. Search now is able to discern if a given card name refers to a specific card
 =======
 import { LinkhubComponent } from './linkhub/linkhub.component';
 >>>>>>> Rebase 4/6
+=======
+import { LinkhubComponent } from './linkhub/linkhub.component';
+>>>>>>> merge conflict
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import { LinkhubComponent } from './linkhub/linkhub.component';
       CardPrintingsComponent,
 <<<<<<< HEAD
       StefanComponent,
+<<<<<<< HEAD
       LinkhubComponent,
       CardSearchComponent
 =======
@@ -53,6 +58,9 @@ import { LinkhubComponent } from './linkhub/linkhub.component';
       StefanComponent,
       LinkhubComponent
 >>>>>>> Rebase 4/6
+=======
+      LinkhubComponent
+>>>>>>> merge conflict
   ],
   imports: [
     RouterModule.forRoot(appRouts),
