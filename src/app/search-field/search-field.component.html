@@ -1,18 +1,16 @@
-<div>
-  <h2>Enter card name</h2>
-  <form (ngSubmit)="onSubmit()" #cardForm="ngForm">
-      <label for="cardName">Name</label>
-      <input type="text" id="name"
-      required
-      [(ngModel)]="input" name="input"
-      #name="ngModel">
+<h2>Enter card name</h2>
+<form (ngSubmit)="onSubmit()" #cardForm="ngForm">
 
-      <div [hidden]="name.valid || name.pristine">
-        Name is required.
-      </div>
+    <label for="cardName">Name</label>
+    <input type="text" id="name"
+    required
+    [(ngModel)]="input" name="input"
+    #name="ngModel">
 
-      <button type="submit" class="btn btn-success" [disabled]="!cardForm.form.valid">Submit</button>
-
+    <div [hidden]="name.valid || name.pristine">
+      Name is required.
     </div>
-  </form>
-</div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!cardForm.form.valid">Submit</button>
+
+</form>
