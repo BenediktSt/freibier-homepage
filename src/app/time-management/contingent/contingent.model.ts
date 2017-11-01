@@ -9,25 +9,29 @@ export interface ContingentConfiguration {
 
 export class Contingent {
 
-  constructor(public configuration: ContingentConfiguration) {}
+  constructor(public _configuration: ContingentConfiguration) {}
 
 
   public get name(): string {
-    return this.configuration.name;
+    return this._configuration.name;
   }
   public get from(): Date {
-    return this.configuration.from;
+    return this._configuration.from;
   }
   public get to(): Date {
-    return this.configuration.to;
+    return this._configuration.to;
   }
   public get size(): number {
-    return this.configuration.size;
+    return this._configuration.size;
   }
   public get sizeBooked(): number {
-    return this.configuration.sizeBooked;
+    return this._configuration.sizeBooked;
   }
   public get booking(): string {
-    return this.configuration.booking;
+    return this._configuration.booking;
+  }
+
+  public set name(value: string) {
+    this._configuration.name = value;
   }
 }

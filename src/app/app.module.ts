@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { HttpModule } from '@angular/http';
@@ -24,6 +24,7 @@ import { TimeManagementComponent } from './time-management/time-management.compo
 import { DashboardComponent } from './time-management/dashboard/dashboard.component';
 import { ContingentComponent } from './time-management/contingent/contingent.component';
 import { ContingentOverviewComponent } from './time-management/contingent/contingent-overview/contingent-overview.component';
+import {ContingentEditorComponent} from './time-management/contingent/contingent-editor/contingent-editor.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ContingentOverviewComponent } from './time-management/contingent/contin
       TimeManagementComponent,
       DashboardComponent,
       ContingentComponent,
-      ContingentOverviewComponent
+      ContingentOverviewComponent,
+      ContingentEditorComponent
   ],
   imports: [
     RouterModule.forRoot(appRouts),
@@ -48,7 +50,8 @@ import { ContingentOverviewComponent } from './time-management/contingent/contin
     FlexLayoutModule,
     MaterialModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

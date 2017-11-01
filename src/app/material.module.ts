@@ -11,7 +11,7 @@ import {
   MdCardModule,
   MdTabsModule,
   MdSlideToggleModule,
-  MdProgressBarModule
+  MdProgressBarModule, MdDatepickerModule, MdNativeDateModule, MdSnackBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +27,10 @@ import {
     MdExpansionModule,
     MdTabsModule,
     MdSlideToggleModule,
-    MdProgressBarModule
+    MdProgressBarModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdSnackBarModule
   ],
   exports: [
     MdButtonModule,
@@ -41,7 +44,10 @@ import {
     MdExpansionModule,
     MdTabsModule,
     MdSlideToggleModule,
-    MdProgressBarModule
+    MdProgressBarModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdSnackBarModule
   ],
 })
 export class MaterialModule {

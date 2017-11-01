@@ -36,4 +36,26 @@ export class ContingentComponent implements OnInit {
     }
   }
 
+  saveContingentEntry(event: Contingent) {
+    this.currentContingent = null;
+  }
+
+  addNewContingent() {
+
+    let counter = 1;
+    for (const element of this.contingents) {
+      // Dieser Check muss evtl angepasst werden
+      if (element.name.indexOf('Neues Kontingent') !== -1) {
+        counter ++;
+      }
+    }
+
+    this.contingents.push(new Contingent({
+      name: 'Neues Kontingent ' + counter,
+      from: new Date(),
+      to: new Date()
+    }));
+  }
+
+  // TODO: Verwendung eines Services
 }
