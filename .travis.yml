@@ -1,6 +1,11 @@
+sudo: required
 language: node_js
 node_js:
   - "6"
+
+services:
+  - docker
+
 branches:
   only:
     - master
@@ -10,16 +15,10 @@ cache:
 install:
   - npm install
 script:
-  - npm run build:ghpages
-deploy:
-  - provider: heroku
-    api_key: $HEROKU_AUTH_TOKEN
-    app: freibier-homepage
-    on:
-      branch: master
-  - provider: pages
-    skip-cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: dist
-    on:
-      branch: master
+  - npm run build:heroku-docker
+  - docker build -t registry.heroku.com/freibier-homepage/web .
+after_success:
+  - if [[ "$TRAVIS_BRANCH" == "master" && "TRAVIS_EVENT_TYPE" == "push" ]]; then
+    docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
+    docker push registry.heroku.com/freibier-homepage/web;
+    fi

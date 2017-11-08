@@ -2,7 +2,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bd59bdd559604224ae5d7408151abddf)](https://www.codacy.com/app/benediktstraube/freibier-homepage?utm_source=github.com&utm_medium=referral&utm_content=BenediktSt/freibier-homepage&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/BenediktSt/freibier-homepage.svg?branch=build-ci)](https://travis-ci.org/BenediktSt/freibier-homepage)
 
-Link zur [Website](https://benediktst.github.io/freibier-homepage)
+Link zur [Website](https://freibier-homepage.herokuapp.com)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
