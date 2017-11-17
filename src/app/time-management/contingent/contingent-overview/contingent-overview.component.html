@@ -1,6 +1,9 @@
 <div class="contingent-container">
   <a (click)="clickEvent()">
-  <p class="contingent-title"> {{contingent.name}}</p>
+  <p class="contingent-title">
+    {{contingent.name}}
+    <span *ngIf="contingent.id === -1">*</span>
+  </p>
   <p> {{contingent.from | date:'shortDate'}} - {{contingent.to | date:'shortDate'}}</p>
 
   <ng-container *ngIf="contingent.size">

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Contingent} from '../contingent.model';
-import {mockdata} from '../contingent.mock';
+import {Contingent} from '../../../../models/time-management/contingent.model';
+import {mockdata} from '../../../../services/time-management/contingent.mock';
 import {MdSnackBar, DateAdapter, NativeDateAdapter} from '@angular/material';
 
 export function endDateAfterValidator(formGroup) {
@@ -81,6 +81,7 @@ export class ContingentEditorComponent implements OnInit, OnChanges {
   saveContingent() {
     if (this.contingentForm.status === 'VALID') {
       const cont = new Contingent({
+        id: this.contingent.id,
         name: this.contingentForm.get('name').value,
         from: this.contingentForm.get('from').value,
         to: this.contingentForm.get('to').value,

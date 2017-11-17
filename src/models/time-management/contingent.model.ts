@@ -1,4 +1,5 @@
 export interface ContingentConfiguration {
+  id: number;
   name: string;
   from: Date;
   to: Date;
@@ -12,6 +13,9 @@ export class Contingent {
   constructor(public _configuration: ContingentConfiguration) {}
 
 
+  public get id(): number {
+    return this._configuration.id;
+  }
   public get name(): string {
     return this._configuration.name;
   }
@@ -31,6 +35,9 @@ export class Contingent {
     return this._configuration.booking;
   }
 
+  public set id(value: number) {
+    this._configuration.id = value;
+  }
   public set name(value: string) {
     this._configuration.name = value;
   }

@@ -1,23 +1,25 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
-import { mockdata } from './contingent.mock';
-import {Contingent} from './contingent.model';
+import {Contingent} from '../../../models/time-management/contingent.model';
 import {MdSlideToggleChange} from '@angular/material';
+import {ContingentService} from '../../../services/time-management/contingent.service';
 
 @Component({
   selector: 'app-contingent',
   templateUrl: './contingent.component.html',
-  styleUrls: ['./contingent.component.css']
+  styleUrls: ['./contingent.component.css'],
+  providers: [ ContingentService ]
 })
 export class ContingentComponent implements OnInit {
 
   contingents: Array<Contingent>;
   currentContingent: Contingent;
 
-  constructor() {
-    this.contingents = mockdata;
+  constructor(private contingentService: ContingentService) {
   }
 
   ngOnInit() {
+    this.contingentService.getAllContingents()
+      .then((conts) => this.contingents = conts);
   }
 
   selectContingent(contingent) {
@@ -26,18 +28,23 @@ export class ContingentComponent implements OnInit {
 
   filterContingentList(event: EventEmitter<MdSlideToggleChange>) {
     if (event['checked']) {
-      this.contingents = mockdata.filter(
+      this.contingents = this.contingents.filter(
         (contingent) => {
           const currentDate = new Date();
           return contingent.from < currentDate && contingent.to > currentDate;
         });
     } else {
-      this.contingents = mockdata;
+      this.contingentService.getAllContingents()
+        .then((conts) => this.contingents = conts);
     }
   }
 
   saveContingentEntry(event: Contingent) {
-    this.currentContingent = null;
+    this.contingentService.saveContingent(event)
+      .then((newID) => {
+        event.id = newID;
+        this.currentContingent = null;
+      });
   }
 
   addNewContingent() {
@@ -51,11 +58,10 @@ export class ContingentComponent implements OnInit {
     }
 
     this.contingents.push(new Contingent({
+      id: -1,
       name: 'Neues Kontingent ' + counter,
       from: new Date(),
       to: new Date()
     }));
   }
-
-  // TODO: Verwendung eines Services
 }

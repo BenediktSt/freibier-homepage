@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {Contingent} from '../contingent.model';
+import {Contingent} from '../../../../models/time-management/contingent.model';
 import { LOCALE_ID } from '@angular/core';
 
 @Component({
