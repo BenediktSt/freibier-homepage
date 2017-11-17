@@ -9,6 +9,7 @@ services:
 branches:
   only:
     - master
+
 cache:
   directories:
     - node_modules
@@ -18,7 +19,9 @@ script:
   - npm run build:heroku-docker
   - docker build -t registry.heroku.com/freibier-homepage/web .
 after_success:
-  - if [[ "$TRAVIS_BRANCH" == "master" && "TRAVIS_PULL_REQUEST" == "false" ]]; then
+  - echo "$TRAVIS_BRANCH"
+  - echo "$TRAVIS_PULL_REQUEST"
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "TRAVIS_PULL_REQUEST" == "false" ]; then
     docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
     docker push registry.heroku.com/freibier-homepage/web;
     fi
