@@ -1,0 +1,28 @@
+<h1> Adventurers </h1>
+<div class="adventurer-container">
+  <ng-container *ngFor="let adventurer of adventurers">
+    <div class="adventurer-card">
+      <md-card>
+        <md-card-title>
+          {{adventurer.name}}
+        </md-card-title>
+        <md-card-content>
+          <table>
+            <tr>
+              <td>Race: </td>
+              <td>{{adventurer.race}}</td>
+            </tr>
+            <tr>
+              <td>Age: </td>
+              <td>{{adventurer.age}}</td>
+            </tr>
+            <tr>
+              <td>Occupation: </td>
+              <td>{{adventurer.occupation}}</td>
+            </tr>
+          </table>
+        </md-card-content>
+      </md-card>
+    </div>
+  </ng-container>
+</div>
