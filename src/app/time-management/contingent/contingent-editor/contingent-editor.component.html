@@ -1,0 +1,65 @@
+<md-card>
+  <md-card-header>
+    <h2>Steuerung der Kontingente</h2>
+  </md-card-header>
+  <ng-container *ngIf="contingent">
+    <md-card-content>
+      <form [formGroup]="contingentForm" novalidate>
+        <md-form-field>
+          <input
+            mdInput
+            formControlName="name"
+            type="text"
+            placeholder="Name des Kontingents"
+            required>
+        </md-form-field>
+        <br>
+        <md-form-field>
+          <input
+            mdInput
+            [mdDatepicker]="pickerFrom"
+            [mdDatepickerFilter]="fromDateFilter"
+            placeholder="Start des Kontingents"
+            formControlName="fromDate"
+            required>
+          <md-datepicker-toggle mdSuffix [for]="pickerFrom"></md-datepicker-toggle>
+          <md-datepicker #pickerFrom></md-datepicker>
+        </md-form-field>
+        <md-form-field>
+          <input
+            mdInput
+            [mdDatepicker]="pickerTo"
+            [mdDatepickerFilter]="toDateFilter"
+            placeholder="Ende des Kontingents"
+            formControlName="toDate"
+            required>
+          <md-datepicker-toggle mdSuffix [for]="pickerTo"></md-datepicker-toggle>
+          <md-datepicker #pickerTo></md-datepicker>
+        </md-form-field>
+        <br>
+        <md-form-field>
+          <input mdInput formControlName="size" type="number" placeholder="Umfang des Kontingents">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput formControlName="bookedSize" type="number" placeholder="Bereits belegtes Kontingent">
+        </md-form-field>
+        <br>
+        <md-form-field>
+          <input mdInput formControlName="bookingId" type="text" placeholder="Buchungs ID des Kontingents">
+        </md-form-field>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button (click)="saveContingent()">Speichern</button>
+      <button md-button (click)="closeEditor()">Schließen</button>
+    </md-card-actions>
+  </ng-container>
+
+
+  <ng-container *ngIf="!contingent">
+    <md-card-content>
+      <p>In diesem Bereich können die zur Verfügung stehenden Kontingente verwaltet weden.</p>
+      <p>Für weitere Details oder zum Bearbeiten eines Kontingentes, das entsprechende Kontinget auswählen.</p>
+    </md-card-content>
+  </ng-container>
+</md-card>
