@@ -1,0 +1,12 @@
+.adventurer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.adventurer-card {
+  margin: 5px;
+  min-width: 300px;
+}
