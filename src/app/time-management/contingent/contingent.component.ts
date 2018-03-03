@@ -19,7 +19,13 @@ export class ContingentComponent implements OnInit {
 
   ngOnInit() {
     this.contingentService.getAllContingents()
-      .then((conts) => this.contingents = conts);
+      .then((conts) => {
+      console.log('init krams');
+      console.log(conts.length);
+      console.log(conts[0]);
+      console.log(conts[0].id);
+      this.contingents = conts;
+      });
   }
 
   selectContingent(contingent) {
@@ -31,7 +37,7 @@ export class ContingentComponent implements OnInit {
       this.contingents = this.contingents.filter(
         (contingent) => {
           const currentDate = new Date();
-          return contingent.from < currentDate && contingent.to > currentDate;
+          return contingent.fromDate < currentDate && contingent.toDate > currentDate;
         });
     } else {
       this.contingentService.getAllContingents()
@@ -57,11 +63,13 @@ export class ContingentComponent implements OnInit {
       }
     }
 
-    this.contingents.push(new Contingent({
-      id: -1,
-      name: 'Neues Kontingent ' + counter,
-      from: new Date(),
-      to: new Date()
-    }));
+    this.contingents.push(new Contingent(
+      -1,
+      'Neues Kontingent ' + counter,
+      new Date(),
+      new Date(),
+      100,
+      0
+    ));
   }
 }

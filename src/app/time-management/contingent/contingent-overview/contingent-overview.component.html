@@ -4,7 +4,7 @@
     {{contingent.name}}
     <span *ngIf="contingent.id === -1">*</span>
   </p>
-  <p> {{contingent.from | date:'shortDate'}} - {{contingent.to | date:'shortDate'}}</p>
+  <p> {{contingent.fromDate | date:'shortDate'}} - {{contingent.toDate | date:'shortDate'}}</p>
 
   <ng-container *ngIf="contingent.size">
     <div class="container"
@@ -14,7 +14,7 @@
          fxLayoutGap="10px"
          fxLayoutGap.xs="0">
       <p class="contingent-size" fxFlex="40%">
-        {{contingent.sizeBooked}} / {{contingent.size}} ({{bookedPercentage | percent}}) </p>
+        {{contingent.bookedSize}} / {{contingent.size}} ({{bookedPercentage | percent}}) </p>
       <md-progress-bar fxFlex="660%" mode="determinate" [value]="bookedPercentage * 100" [color]="bookedPercentage>=0.8?'warn':'accent'"></md-progress-bar>
     </div>
   </ng-container>

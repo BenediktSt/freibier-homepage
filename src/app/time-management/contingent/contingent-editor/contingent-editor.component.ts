@@ -5,8 +5,8 @@ import {mockdata} from '../../../../services/time-management/contingent.mock';
 import {MdSnackBar, DateAdapter, NativeDateAdapter} from '@angular/material';
 
 export function endDateAfterValidator(formGroup) {
-  const startDate = formGroup.get('from').value;
-  const endDate = formGroup.get('to').value;
+  const startDate = formGroup.get('fromDate').value;
+  const endDate = formGroup.get('toDate').value;
 
   return (endDate < startDate) ? { nomatch: true} : null;
 }
@@ -34,19 +34,19 @@ export class ContingentEditorComponent implements OnInit, OnChanges {
     dateAdapter.setLocale('de-DE');
     this.contingentForm = this.fb.group({
       name: ['', Validators.required],
-      from: [new Date(), Validators.required],
-      to: [new Date(), Validators.required],
+      fromDate: [new Date(), Validators.required],
+      toDate: [new Date(), Validators.required],
       size: '',
-      sizeBooked: '',
-      booking: ''
+      bookedSize: '',
+      bookingId: ''
     }, {validator: endDateAfterValidator});
 
     this.fromDateFilter = (d: Date): boolean => {
-      return d < this.contingentForm.get('to').value;
+      return d < this.contingentForm.get('toDate').value;
     };
 
     this.toDateFilter = (d: Date): boolean => {
-      return d > this.contingentForm.get('from').value;
+      return d > this.contingentForm.get('fromDate').value;
     };
 
   }
@@ -66,11 +66,11 @@ export class ContingentEditorComponent implements OnInit, OnChanges {
   setFormValues() {
     this.contingentForm.setValue({
       name: this.contingent.name,
-      from: this.contingent.from,
-      to: this.contingent.to,
+      fromDate: this.contingent.fromDate,
+      toDate: this.contingent.toDate,
       size: this.contingent.size || 0,
-      sizeBooked: this.contingent.sizeBooked || 0,
-      booking: this.contingent.booking || ''
+      bookedSize: this.contingent.bookedSize || 0,
+      bookingId: this.contingent.bookingId || ''
     });
   }
 
@@ -80,15 +80,15 @@ export class ContingentEditorComponent implements OnInit, OnChanges {
 
   saveContingent() {
     if (this.contingentForm.status === 'VALID') {
-      const cont = new Contingent({
-        id: this.contingent.id,
-        name: this.contingentForm.get('name').value,
-        from: this.contingentForm.get('from').value,
-        to: this.contingentForm.get('to').value,
-        size: this.contingentForm.get('size').value,
-        sizeBooked: this.contingentForm.get('sizeBooked').value,
-        booking: this.contingentForm.get('booking').value
-      });
+      const cont = new Contingent(
+        this.contingent.id,
+        this.contingentForm.get('name').value,
+        this.contingentForm.get('fromDate').value,
+        this.contingentForm.get('toDate').value,
+        this.contingentForm.get('size').value,
+        this.contingentForm.get('bookedSize').value,
+        this.contingentForm.get('bookingId').value
+      );
 
       // Workaround mit Mock-Daten
       mockdata.forEach((element, index) => {

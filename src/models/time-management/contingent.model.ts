@@ -1,44 +1,31 @@
 export interface ContingentConfiguration {
   id: number;
   name: string;
-  from: Date;
-  to: Date;
+  fromDate: Date;
+  toDate: Date;
   size?: number;
-  sizeBooked?: number;
-  booking?: string;
+  bookedSize?: number;
+  bookingId?: string;
 }
 
 export class Contingent {
 
-  constructor(public _configuration: ContingentConfiguration) {}
+  public id: number;
+  public name: string;
+  public fromDate: Date;
+  public toDate: Date;
+  public size?: number;
+  public bookedSize?: number;
+  public bookingId?: string;
 
 
-  public get id(): number {
-    return this._configuration.id;
-  }
-  public get name(): string {
-    return this._configuration.name;
-  }
-  public get from(): Date {
-    return this._configuration.from;
-  }
-  public get to(): Date {
-    return this._configuration.to;
-  }
-  public get size(): number {
-    return this._configuration.size;
-  }
-  public get sizeBooked(): number {
-    return this._configuration.sizeBooked;
-  }
-  public get booking(): string {
-    return this._configuration.booking;
-  }
-
-  public set id(value: number) {
-    this._configuration.id = value;
-  }
-  public set name(value: string) {
-    this._configuration.name = value;
+  constructor(id: number, name: string, fromDate: Date, toDate: Date, size: number, bookedSize: number, bookingId: string = 'empty') {
+    this.id = id;
+    this.name = name;
+    this.fromDate = fromDate;
+    this.toDate = toDate;
+    this.size = size;
+    this.bookedSize = bookedSize;
+    this.bookingId = bookingId;
   }
 }

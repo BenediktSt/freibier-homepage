@@ -23,7 +23,7 @@ export class ContingentOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookedPercentage = this.contingent.sizeBooked / this.contingent.size;
+    this.bookedPercentage = this.contingent.bookedSize / this.contingent.size;
   }
 
   clickEvent() {

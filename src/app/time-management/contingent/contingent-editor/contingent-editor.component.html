@@ -20,7 +20,7 @@
             [mdDatepicker]="pickerFrom"
             [mdDatepickerFilter]="fromDateFilter"
             placeholder="Start des Kontingents"
-            formControlName="from"
+            formControlName="fromDate"
             required>
           <md-datepicker-toggle mdSuffix [for]="pickerFrom"></md-datepicker-toggle>
           <md-datepicker #pickerFrom></md-datepicker>
@@ -31,7 +31,7 @@
             [mdDatepicker]="pickerTo"
             [mdDatepickerFilter]="toDateFilter"
             placeholder="Ende des Kontingents"
-            formControlName="to"
+            formControlName="toDate"
             required>
           <md-datepicker-toggle mdSuffix [for]="pickerTo"></md-datepicker-toggle>
           <md-datepicker #pickerTo></md-datepicker>
@@ -41,11 +41,11 @@
           <input mdInput formControlName="size" type="number" placeholder="Umfang des Kontingents">
         </md-form-field>
         <md-form-field>
-          <input mdInput formControlName="sizeBooked" type="number" placeholder="Bereits belegtes Kontingent">
+          <input mdInput formControlName="bookedSize" type="number" placeholder="Bereits belegtes Kontingent">
         </md-form-field>
         <br>
         <md-form-field>
-          <input mdInput formControlName="booking" type="text" placeholder="Buchungs ID des Kontingents">
+          <input mdInput formControlName="bookingId" type="text" placeholder="Buchungs ID des Kontingents">
         </md-form-field>
       </form>
     </md-card-content>
